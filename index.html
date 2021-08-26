@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SSS Hotels</title>
+    <meta name="viewport"  content="width:device-width, initial-scale:1.0">
+    <meta charset="utf-8"/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"> </script>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  	body {
+    margin: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+img
+{
+  width:70%;
+  height:70%;
+}
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+  height:30%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Style the buttons */
+.btn{
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: teal;
+  cursor: pointer;
+  color:white;
+}
+
+.btn:hover {
+  background-color: #ddd;
+  color:black;
+  
+}
+
+button.btn:active {
+  background-color: #666;
+  color: white;
+}
+@media screen and (max-width:700px) {
+	.ex p
+	{
+		font-size:x-large;
+		margin:50px;
+	}
+	
+	
+}
+</style>
+
+<script>
+var app = angular.module("myNoteApp", []);
+</script>
+
+<script>
+   	app.controller("myNoteCtrl", function($scope) {
+    $scope.message = "";
+    $scope.left = function() {
+    return 100 - $scope.message.length;
+    };
+    $scope.clear = function() {
+    $scope.message = "";
+    };
+    $scope.save = function() {
+    alert("Note Saved");
+};
+});
+</script>
+
+<script>
+	var elements = document.getElementsByClassName("column");
+
+// Declare a loop variable
+var i;
+
+// List View
+function listView() {
+  
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.width = "50%";   
+    elements[i].style.float="none";
+  }
+}
+
+// Grid View
+function gridView() {
+  
+  for (i = 0; i < elements.length; i++) {
+    elements[i].style.float="left";
+      elements[i].style.width = "30%";
+   
+  }
+}
+
+
+
+
+</script>
+  
+
+<style>
+	
+@media screen and (max-width: 700px)
+    {
+        nav a
+        {
+            display:inline-block;
+            width:50%;
+        }
+        h1{
+            font-size:30px;
+        }
+    }
+    
+
+
+
+*{
+	margin:0;
+	padding:0;
+    color: white;
+}
+
+
+
+
+
+body{
+	font:15px;
+	font-family:cursive;
+	color: black;
+	background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url("https://static.toiimg.com/photo/66274130/Taj.jpg?width=748&resize=4");
+    background-size: cover;
+	text-align:center;
+}
+
+a, a:visited {
+	outline:none;
+	color:white;
+
+}
+
+a:hover::after{
+	text-decoration:none;
+    
+}
+
+section, footer, header, aside, nav{
+	display: block;
+}
+
+h1
+{
+	color:white;
+}
+
+
+nav{
+	display:block;
+	margin:10px auto 45px;
+	background-image:url("https://i.pinimg.com/originals/bf/67/b6/bf67b626fad5bfc1fef1f99820ddaf6c.jpg");
+	box-shadow:0 1px 1px #ccc;
+	border-radius:2px;
+
+    
+
+}
+
+nav a{
+	display:inline-block;
+	padding: 18px 30px;
+	color:white;
+	font-weight:bold;
+	font-size:16px;
+	text-decoration:none !important;
+	line-height:1;
+	text-transform: uppercase;
+	background-color:transparent;
+
+}
+nav a::after{
+    content:'';
+    width:0%;
+    height:3px;
+    background:aqua;
+    display:block;
+    margin:auto;
+    transition:0.5s;
+}
+nav a:hover::after
+{
+    width:100%;
+}
+
+nav a:first-child{
+	border-radius:2px 0 0 2px;
+}
+
+nav a:last-child{
+	border-radius:0 2px 2px 0;
+}
+
+
+
+p{
+	font-s
+	color:#7d9098;
+}
+
+p b{
+	color:#ffffff;
+	display:inline-block;
+	padding:5px 10px;
+	background-color:crimson;
+	border-radius:2px;ize:22px;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:18px;
+}
+table td,th
+{
+	text-align: center;
+}
+i{
+    color:black;
+    display:block;
+
+}
+nav{
+    background:transparent;
+}
+
+nav.home .home,
+nav.details .details,
+nav.booking .booking,
+nav.contact .contact{
+	background-color:aqua;
+	color:black;
+}
+i{
+    color:aqua;
+}
+</style>
+
+	
+</head>
+	
+
+<body ng-app="myNoteApp" ng-controller="myNoteCtrl">
+
+<!-----------------Home Page-------------------->
+<center><h1>SSS HOTELS</h1></center>		
+
+<nav class="{{active}}">	
+    <a href="#" class="home" ng-click="active='home'">Home</a>	
+    <a href="#" class="booking" ng-click="active='booking'">Booking</a>			
+    <a href="#" class="details" ng-click="active='details'">Room Details</a>
+    <a href="#" class="contact" ng-click="active='contact'">Contact</a>
+    
+</nav>
+<p ng-show="active">In  <b>{{ active }}</b>  Page</p><br><br>
+
+<div ng-show="active=='home'">
+    <center><iframe width="300" height="300" src="https://www.youtube.com/embed/rRa9KGUzzZc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>			
+</div><br>
+<div ng-show="active=='home'" class="ex">
+    <p style="font-weight: bold;font-size:18px;">SSS Hotels,4 star Hotel,EVR Periyar Salai,Near Sangam Cinemas,Poonamalee high road,Kilpauk,Chennai-600010.</p>
+    <p>The SSS Hotels Chennai has 60 well-appointed rooms with superior business facilities and devoted attention <br> to all your needs for your luxurious accommodation in Chennai. The grand, yet peaceful ambience of the hotel is accentuated by <br>grand stairways, Italian marble, and intricate gold leaf work. It is set in a serene, arboreal locale in the heart <br>of the commercial hub of the city, just 12 km from the airport, with entertainment and shopping avenues in proximity.</p>
+</div>
+
+<!----------------Booking Page------------------>
+<div ng-show="active=='booking'">
+
+<form name="roomnos">
+    <center><table style="border-collapse: collapse;width:80%;font-size:20px;">
+        <tr>
+        <th><b>ROOM CODE</b></th>
+        <th><b>ROOM TYPE</b></th>
+        <th><b>NUMBER OF ROOMS NEEDED</b>
+        </th>
+    </tr>
+    <tr>
+    <td><b>1</b></td>
+    <td>Single Room</td>
+    <td><input type="number" ng-init="a=0;" ng-model="a" id="one" name="room"></td>
+    </tr>
+    <tr>
+    <td><b>2</b></td>
+    <td>Couple Room</td>
+    <td><input type="number" ng-init="b=0;" ng-model="b" id="two" name="room"></td>
+</tr>
+<tr>
+    <td><b>3</b></td>
+    <td>Double Deckor Room</td>
+    <td><input type="number" ng-init="c=0;" ng-model="c" id="three" name="room"></td>
+</tr>
+<tr>
+    <td><b>4</b></td>
+    <td>Master Room</td>
+    <td><input type="number" ng-init="d=0;" ng-model="d" id="four" name="room"></td>
+</tr>
+<tr>
+    <td>
+    <b>5</b></td>
+    <td>Suite Room</td>
+    <td>
+    <input type="number" ng-init="e=0;" ng-model="e" id="five" name="room"></td> 
+
+</tr>
+
+</table></center>
+<br><br>
+    
+
+                
+<br>
+<br>
+<h2><p>Your Payment amount is<span> {{ a*1000+b*1999+c*3999+d*6999+e*9999  | currency:"₹"}}</span></p></h2>
+<br><br>
+<input style="color:white;background-color: crimson;font-weight:bold;font-family: cursive;font-size:20px;border-radius: 3px;cursor: pointer;" type="button" value="MAKE BOOKING">				
+    
+    
+
+</form>	 
+
+<!--------room details page--------> 
+
+</div>
+<div ng-show="active=='details'">
+    <div id="btnContainer">
+        <button class="btn" onclick="listView()"><i class="fa fa-bars"></i> List</button>
+        <button class="btn" onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+    </div>
+<br>
+
+<div class="row">
+    <div class="column">
+        <img src="https://3.imimg.com/data3/HL/MM/MY-10413033/single-bed-room-services-500x500.jpg">
+        <p>RoomCode-1 Single Room - 1000/-</p>
+    </div>
+    <div class="column">
+         <img src="https://etudessansfrontieres.org/wp-content/uploads/2020/10/small-bedroom-designs-for-couples-by-putra-sulung-medium.jpg">
+        <p>RoomCode-2 Couple Room - 1999/-</p>
+    </div>
+   <div class="column">
+      <img src="https://designrshub-designrshub.netdna-ssl.com/wp-content/uploads/2020/08/double-decker-bed-designs-26.jpg">
+      <p>RoomCode-3 Double Deckor Room - 3999/-</p>
+    </div>
+
+</div>
+
+<div class="row">
+     <div class="column">
+        <img src="https://www.thesleepjudge.com/wp-content/uploads/2017/06/Romantic-Atmosphere.jpg">
+        <p>RoomCode-4 Master Room - 6999/-</p>
+    </div>
+    <div class="column">
+        <img src="https://d2e5ushqwiltxm.cloudfront.net/wp-content/uploads/sites/70/2016/11/22095538/suite-novotel-bangkok-ploenchit-sukhumvit-1.jpeg">
+        <p>RoomCode-5 Suite Room - 9999/-</p>
+    </div>
+</div>
+
+</div>
+
+
+<!------contact page----------->
+
+<div ng-show="active=='contact'">
+    <i class="fa fa-map-marker" style="font-size: 30px;"></i><span>SSS Hotels,4 star Hotel,EVR Periyar Salai,Near Sangam Cinemas,Poonamalee high road,Kilpauk,Chennai-600010.</span><br><br>
+    <i class="fa fa-envelope" style="font-size: 30px;"></i><span>    ssshotels@gmail.com</span><br><br>
+    <i class="fa fa-phone" style="font-size: 25px;">  044- 8056003030</i>
+    <br><br><br>
+    <center><textarea placeholder="Enter Your Feedback here!!!" style="background-color:white;color:black;font-size:15px;" ng-model="message" cols="50"
+    rows="15"></textarea></center>
+    <p align="center">
+    <button style="border:1px black solid; background-image:url('https://i.pinimg.com/originals/bf/67/b6/bf67b626fad5bfc1fef1f99820ddaf6c.jpg'); font-size:20px;font-weight:bold;margin-right:5%; color:white;" ng-click="save()">Save</button>
+    <button style="border:1px black solid;  background-image:url('https://i.pinimg.com/originals/bf/67/b6/bf67b626fad5bfc1fef1f99820ddaf6c.jpg'); font-size:20px;font-weight:bold; color:white;" ng-click="clear()">Clear</button>
+    </p>
+</div>
+
+
+
+	
+
+
+	</body>
+</html>
+
